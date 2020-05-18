@@ -31,14 +31,22 @@ img {
 .fa {
   text-align: center;
   text-decoration: none;
-  margin: 10px 5px;
+  margin: 10px 15px;
   font-size: 100px;
 }
 
-.fa:hover {
+.fa-github:hover {
   opacity: 0.7;
+  text-decoration: none;
 }
-
+.fa-linkedin:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+.fa-envelope:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
 .fa-linkedin {
     color: #6D7993;
 }

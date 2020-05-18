@@ -1,0 +1,126 @@
+@import'https://fonts.googleapis.com/css?family=Playfair+Display';
+
+html, body{
+  background: #F0F8FF;
+  background-image: linear-gradient(90deg, #F0F8FF, #e6e6fa);
+}
+
+div.navBar {
+  padding-top: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+div.navBar a:before, div.navBar a::after {
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: #152238;
+    transition: all 0.3s;
+}
+
+div.navBar a:before {
+  left: 0px;
+  top: 0px;
+}
+
+div.navBar a:after {
+  right: 0px;
+  bottom: 0px;
+}
+
+div.navBar a:hover:before, div.navBar a:hover:after {
+    opacity: 1;
+    width: 100%;
+}
+
+div.container a {
+  color: #152238;
+  text-decoration: none;
+  font-family: "Playfair Display";
+  font-size: 24px;
+  font-weight: 300px;
+  margin: 0px 10px;
+  padding: 8px 8px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.primary {
+  font-family: "Playfair Display";
+  color: #152238;
+  text-decoration: none;
+  padding-top: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.footer {
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Playfair Display";
+}
+
+.fa {
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 15px;
+  font-size: 100px;
+}
+
+.fa-github:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+.fa-linkedin:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+.fa-envelope:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.fa-linkedin {
+    color: #6D7993;
+    text-decoration: none;
+}
+
+.fa-github {
+    color: #6D7993;
+    text-decoration: none;
+}
+
+.fa-envelope {
+    color: #6D7993;
+    text-decoration: none;
+}
+
+h2 {
+  font-family: "Playfair Display";
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+img {
+  border-radius: 50%;
+  max-height: 200px;
+  max-width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%
+}
+
+hr {
+  width: 200px;
+  color: #152238;
+}
