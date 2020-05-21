@@ -10,50 +10,111 @@
   <!-- script type="text/javascript" src="contactscript.js"></script> -->
 </head>
 <body>
-  <div class="container">
-
-    <div class ="row">
-      <div class="navBar">
+      <div class="container navBar">
         <a href="index.html">HOME</a>
         <a href="aboutme.html">ABOUT ME</a>
         <a href="resume.pdf">RESUME</a>
         <!-- <a href="visresume.html">VISUAL RESUME</a> -->
       </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+          <div class = "title">
+            <h2>Contact Me</h2>
+            <hr>
+          </div>
+        </div>
     </div>
 
-     <div class="row">
-         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-           <h2 class="form-title">Contact Me</h2>
-         </div>
-     </div>
+    <div class = "row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <form id="contact-form" name="contact-form" class="form" action="http://amnoweber.com/contact.php" method="post" role="form">
+          <div class="form-group">
+            <label id="nameLabel" for="name"></label>
+            <input type="text" id="name" class ="form-control" name="name" placeholder="Name (First & Last)" tabindex="1">
+          </div>
+          <div class="form-group">
+              <label id="emailLabel" for="email"></label>
+              <input type="email" id="email" class="form-control" name="email" placeholder="Email" tabindex="2">
+          </div>
+          <div class="form-group">
+              <label id="messageLabel" for="message"></label>
+              <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Your Message" tabindex="4"></textarea>
+          </div>
 
-     <div class="row">
+          <div class="text-center margin-top-25">
+              <button class="btn btn-mod btn-border btn-large" onclick="validateForm();">Send!</button>
+          </div>
 
-         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            </form>
+          <div class="status"></div>
+      </div>
+    </div>
 
-             <form id="contact-form" name="myForm" class="form" action="/contact.php" method="post" role="form">
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.js"></script>
+    <!--Custom scripts-->
 
-                 <div class="form-group">
-                     <label class="form-label" id="nameLabel" for="name"></label>
-                     <input type="text" id="name" class="form-control" name="name" placeholder="Name (First & Last)" tabindex="1">
-                 </div>
+    <script>
+      function validateForm() {
+          var x =  document.getElementById('name').value;
+          if (x == "") {
+           document.getElementById('status').innerHTML = "Name cannot be empty";
+           return false;
+         }
+           x =  document.getElementById('email').value;
+           if (x == "") {
+               document.getElementById('status').innerHTML = "Email cannot be empty";
+               return false;
+           } else {
+               var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              if(!re.test(x)){
+                   document.getElementById('status').innerHTML = "Email format invalid";
+                  return false;
+               }
+           }
+           x =  document.getElementById('message').value;
+           if (x == "") {
+               document.getElementById('status').innerHTML = "Message cannot be empty";
+               return false;
+           }
+          document.getElementById('status').innerHTML = "Sending...";
+                      formData = {
+            'name'     : $('input[name=name]').val(),
+            'email'    : $('input[name=email]').val(),
+            'message'  : $('textarea[name=message]').val()
+            };
 
-                 <div class="form-group">
-                     <label class="form-label" id="emailLabel" for="email"></label>
-                     <input type="email"id="email" class="form-control" name="email" placeholder="Email" tabindex="2">
-                 </div>
 
-                 <div class="form-group">
-                     <label class="form-label" id="messageLabel" for="message"></label>
-                     <textarea rows="6" cols="60" class="form-control" id="message" placeholder="Your Message" tabindex="4"></textarea>
-                 </div>
+            $.ajax({
+            url : "contact.php",
+            type: "POST",
+            data : formData,
+            success: function(data, textStatus, jqXHR)
+            {
 
-                 <div class="text-center margin-top-25">
-                     <button type="submit" class="btn btn-mod btn-border btn-large">Send!</button>
-                 </div>
-             </form>
-         </div>
-     </div>
-   </div>
-</body>
+            $('#status').text(data.message);
+            if (data.code) //If mail was sent successfully, reset the form.
+            $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+            $('#status').text(jqXHR);
+            }
+            });
+            // Is this a problem?
+          document.getElementById('contact-form').submit();
+
+      }
+    </script>
+
+
+    </body>
 </html>
