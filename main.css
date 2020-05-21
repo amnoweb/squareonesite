@@ -20,8 +20,8 @@ html, body {
 
 img {
   animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
-  max-height: 600px;
-  max-width: 400px;
+  max-height: 525px;
+  max-width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
