@@ -7,6 +7,18 @@ html, body{
 	padding: 0;
 }
 
+.myres {
+  justify-content: center;
+  padding-top: 3%;
+  display: block;
+}
+
+iframe {
+  display: block;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 .title{
   font-family:"Playfair Display";
   text-align: center;
