@@ -18,6 +18,16 @@ html, body{
   font-size: 30px;
   font-weight: 300;
   font-family: "Playfair Display";
+  background-color: #FBFDFF;
+  border-color: #778899;
+  border-style: outset;
+  margin-top: 3%;
+  border-width: 2px;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  margin-bottom: 2%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .form-group .form-control {
@@ -26,13 +36,14 @@ html, body{
   border-style: none none solid none;
   border-radius:0;
   border-color: #000;
+  background-color: #FBFDFF;
 }
 
 .form-group .form-control:focus {
 	box-shadow: none;
   border-width: 0 0 2px 0;
   border-color: #000;
-
+  background-color: #FBFDFF;
 }
 
 textarea {
@@ -47,8 +58,8 @@ textarea {
 
 .btn-mod.btn-border {
     color: #152238;
-    border: 1px solid #152238;
-    background: transparent;
+    border: 1.25px solid #152238;
+    background-color: #FBFDFF;
 }
 
 .btn-mod, a.btn-mod {
@@ -56,11 +67,10 @@ textarea {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 4px 13px;
-    color: #F0F8FF;
-    background: rgba(34,34,34, .9);
     border: 1px solid transparent;
     font-size: 11px;
     font-weight: 400;
+    font-family: "Playfair Display";
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
@@ -78,7 +88,7 @@ textarea {
 }
 
 .btn-mod.btn-border:hover, .btn-mod.btn-border:active, .btn-mod.btn-border:focus, .btn-mod.btn-border:active:focus {
-    color: #F0F8FF;
+    color: #FBFDFF;
     border-color: #152238;
     background: #152238;
     outline: none;
@@ -141,9 +151,4 @@ div.container a {
   z-index: 0;
   cursor: pointer;
   text-align: center;
-}
-
-hr {
-  width: 200px;
-  color: #152238;
 }

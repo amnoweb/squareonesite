@@ -5,11 +5,26 @@ html, body {
   background-image: linear-gradient(90deg, #F0F8FF, #e6e6fa);
 }
 
+.content {
+    margin: auto;
+    padding-top: 5%;
+    width: 40%;
+    padding-bottom: 5%;
+}
+
 .header {
   margin: 0 auto;
-  padding-top: 5%;
   text-align: center;
   font-family: "Playfair Display";
+}
+
+.title {
+  background-color: #FBFDFF;
+  border-color: #778899;
+  border-style: outset;
+  padding: 1%;
+  box-shadow:0px 1px 1px #8594a3;
+  border-width: 2px;
 }
 
 .footer {
@@ -21,7 +36,7 @@ html, body {
 img {
   animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
   max-height: 45%;
-  max-width: 30%;
+  max-width: 45%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -66,31 +81,29 @@ img {
     font-size: 14px;
     font-style: normal;
     font-variant: normal;
+    margin-bottom: 0%;
 }
 
 h1 {
   color: #152238;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 300;
   margin-bottom: 5px;
   text-align: center;
 }
 
 h3 {
-  color: #152238;
-  font-size: 16px;
+  color: #4C5869;
+  font-size: 14px;
   font-weight: 200;
-  line-height: 1.3;
   font-style: normal;
 }
 
 div.container {
   font-family: "Playfair Display";
-  margin: 0 auto;
-  padding-top: 3%;
-  padding-bottom: 2%;
   max-height: 8%;
   text-align: center;
+  padding-bottom: 1%;
 }
 
 div.container a {
@@ -104,6 +117,16 @@ div.container a {
   position: relative;
   z-index: 0;
   cursor: pointer;
+}
+
+.navBar {
+  background-color: #FBFDFF;
+  border-color: #778899;
+  border-style: outset;
+  margin-top: 3%;
+  border-width: 2px;
+  padding: 1.5%;
+  box-shadow:0px 1px 1px #8594a3;
 }
 
 div.navBar a:before, div.navBar a::after {

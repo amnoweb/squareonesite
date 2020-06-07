@@ -26,11 +26,14 @@ iframe {
   font-family:"Playfair Display";
   text-align: center;
   margin-top: 3%;
-  background-color: #fffafa;
+  background-color: #FBFDFF;
   margin-left: 20%;
   margin-right: 20%;
   padding-top: 15px;
   padding-bottom: 1px;
+  border-color: #778899;
+  border-style: outset;
+  border-width: 2px;
 }
 
 .container {
